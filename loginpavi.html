@@ -1,0 +1,32 @@
+<html>
+<head> 
+<title>LOGIN FORM</title>
+</head>
+<body>
+<marquee><i><b><u> LOGIN PAGE</i></b></u></marquee>
+<form action="sub3.php" method="post">
+User name:<br>
+<input type="text"  name="L1"><br>
+User password:<br>
+<input type="password" name="L2"><br>
+<fieldset>
+<input type="radio" name="male">male<br>
+<input type="radio" name="female"checked>female<br>
+</fieldset>
+<input type="button" onclick="return check(this.form)"  value="submit">
+<br>
+<input type="button" name="vpcl" value="cancel"><br>
+</form>
+<script language="javascript">
+function check(form)
+{if(form.L1.value=="pavithra"&&form.L2.value=="pavi")
+{window.location.href="pavicol.html";
+}
+else{alert("errror password or username")
+return false;
+}
+}
+</script>
+
+</body>
+</html>
