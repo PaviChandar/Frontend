@@ -1,1 +1,282 @@
 
+<!DOCTYPE html>
+
+<html>
+<link rel="stylesheet" href="student.css">
+<head>
+    <title> Student Registration</title>
+</head>
+
+<body>
+<h1>Registration form </h1>
+<form name="myform" method="post" onSubmit="return validate()">
+<table align="center" cellpadding="10">
+<!——— First Name ——>
+<tr>
+<td> First Name </td>
+<td> <input type="text" name="fname" maxlength="30"/></td>
+</tr>
+
+<!——— Last Name ——>
+<tr>
+<td> Last Name </td>
+<td> <input type="text" name="lname" maxlength="30"/></td>
+</tr>             
+
+<!———DOB ——>
+<tr>
+<td> Date of Birth </td>
+<td> <input type="date" name="date" id="date" min=”1981-01-01″/></td>
+</tr>                                     
+
+<!——— Email ID ——>
+<tr>
+<td> Email ID </td>
+<td> <input type="text" name="email" maxlength="100"/></td>
+</tr>
+
+<!——— Phone no.——>
+<tr>
+<td> Phone </td>
+<td> <input type="text" name="phone"/>    </td>
+</tr> 
+
+<!——— Gender radio button——>
+<tr>
+<td> Gender </td>
+<td> Male <input type="radio" name="gender" value="male"/>
+    Female <input type="radio" name="gender" value="female"/></td>
+</tr>
+
+<!——— Address ——>
+<tr>
+<td>Address</td>
+<td><textarea name="address" placeholder=" Enter Address" cols="50"></textarea></td>
+</tr>             
+
+<!——— State select tag——>
+<tr>
+<td>State</td>
+<td>
+
+<select id="state" name="state">
+<option value="Select a state">Select a state</option>
+<option value="Delhi">Delhi</option>
+<option value="Manipur">Manipur</option>
+<option value="Mumbai">Mumbai</option>
+<option value="Kolkata">Kolkata</option>
+</select>
+</td>
+</tr>
+
+<!——— Country——>
+<tr>
+<td> Country</td>
+<td> <input type="text" value="India" name="country" readonly="readonly"/></td>
+</tr>
+                            
+<!——— Field——>
+<tr>
+<td>Field</td>
+<td>
+<select id="field" name="field">
+<option value="Select a field">Choose one</option>
+<option value="agriculture">Agriculture</option>
+    <option value="commerce">Commerce</option>
+    <option value="computer science">Computer Science</option>
+<!-- <option value="Manipur">Manipur</option>
+<option value="Mumbai">Mumbai</option>
+<option value="Kolkata">Kolkata</option>-->
+</select>
+</td>
+ </tr>
+
+<!——— Degree——>
+<tr>
+<td>Degree</td>
+<td>
+<select id="degree" name="degree">
+<option value="Select a degree">Choose one</option>
+<option value="Bachelors/undergraduate">Bachelors/undergraduate</option>
+<option value="Postgraduate">Postgraduate</option>
+
+ <!-- <option value="Manipur">Manipur</option>
+<option value="Mumbai">Mumbai</option>
+<option value="Kolkata">Kolkata</option>-->
+</select>
+</td>
+</tr>
+
+<!——— Hobbies checkbox——>
+ <!-- <tr>
+<td>Hobbies </td>
+<td> Drawing : <input type=”checkbox” name=”hobby”  id=”hobby” value=”draw”/>
+Playing : <input type=”checkbox” name=”hobby” id=”hobby” value=”play”/>
+Swimming : <input type=”checkbox” name=”hobby” id=”hobby” value=”swim”/>
+travelling: <input type=”checkbox” name=”hobby” id=”hobby” value=”travel”/>
+</td>
+</tr>-->
+
+<!—- Submit——->
+<tr>
+<td colspan="2" align="center">
+<input type="submit" name="submit" value="Submit"/>
+
+</td>
+</tr>
+</table>
+</form>
+<script type="text/javascript">
+    
+function validate()
+{
+var first= document.forms["myform"]["fname"].value;
+var last= document.forms["myform"]["lname"].value;
+var date= document.forms["myform"]["date"].value;
+var email= document.forms["myform"]["email"].value;
+var phone= document.forms["myform"]["phone"].value;
+var gender= document.forms["myform"]["gender"].value;
+var address = document.forms["myform"]["address"].value;
+var state= document.forms["myform"]["state"].value;
+var degree= document.forms["myform"]["degree"].value;
+var field= document.forms["myform"]["field"].value;
+
+/*var hobby= document.getElementById(“hobby”);*/
+
+// first name validation
+
+if(first=="")
+{
+alert("enter the name");
+return false;
+}
+
+if(!isNaN(first))
+{
+alert("name should be in character");
+return false;
+}
+
+//last name validation
+if(last == "")
+{
+alert("enter the last name");
+return false;  
+}
+
+if(!isNaN(last))
+{
+alert("name should be in character");
+return false;
+}
+
+// DOB validation
+if(date == "")
+{
+alert("enter date of birth");
+return false;
+}
+
+// email validation
+var at = email.indexOf("@");
+var dot = email.lastIndexOf(".");
+if(email="")
+{
+alert("Enter email");
+return false;
+}
+/*if(at<1||dot<at+2||dot+2 >= email.length)
+{
+alert("Not a valid email");
+return false;
+}*/
+//phone no. validation
+if(phone == "")
+{
+alert("enter phone no.");
+return false;
+}
+if(isNaN(phone))
+{
+alert("phone no. should be in digit.");
+return false;
+}
+
+if( phone.length != 10)
+{
+alert("must be 10 digit no.");
+return false;
+}
+
+//gender radio validation
+if(gender=="")
+
+{
+
+alert("select a gender");
+
+return false;
+
+}
+
+// address validation
+
+if(address == "")
+
+            {
+
+            alert("Enter Address");
+
+            return false;
+
+            }
+
+// state validation
+
+if(state=="Select a state")
+
+            {
+
+            alert("select a state");
+
+            return false;
+
+            }
+    
+    if(degree=="Select a degree")
+
+            {
+
+            alert("select a degree");
+
+            return false;
+
+            }
+    if(field=="Select a field")
+
+            {
+
+            alert("select a field");
+
+            return false;
+
+            }
+    
+
+// hobbies validation
+/*
+if(!hobby.checked)
+
+            {
+
+            alert(“select a hobby”);
+
+            return false;
+
+            }*/
+
+}
+    </script>
+</body>
+
+</html>
