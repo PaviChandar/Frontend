@@ -1,0 +1,15 @@
+<html>
+<head>
+  <title>HTML basics</title>
+  <style>
+    #a{color:red}
+  </style>
+</head>
+<body>
+  <h3 id="a">this is Asia</h3>
+  <p id="a">this is India</p>
+  <script>
+    document.getElementById('a').innerHTML="country"
+  </script>
+</body>
+</html>
