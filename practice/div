@@ -1,0 +1,20 @@
+<html>
+<head>
+<style>
+.demoDiv {
+  border:5px red ;
+  border-style:solid dotted dashed double;
+  background-color: lightblue;
+  text-align: center;
+}
+</style>
+</head>
+<body>
+
+<div class="demoDiv">
+  <h2>Div Tag</h2>
+  <p> Text in a div tag.</p>
+</div>
+<p>The content to be displayed outside div tag!</p>
+</body>
+</html>
