@@ -1,0 +1,9 @@
+<html>
+<body>
+
+<h1>The span element</h1>
+
+<p>My mother has <span style="color:blue;font-weight:strong">blue</span> eyes and my father has <span style="color:orchid;font-weight:bold">black</span> eyes.</p>
+
+</body>
+</html>
