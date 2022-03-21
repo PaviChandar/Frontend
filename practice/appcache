@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html manifest="example.appcache">
+    <head>
+        <title>Application Cache</title>
+    </head>
+    <body>
+        <h2>Application Cache</h2>
+        <p>Current Date and Time is <span id="date-time"></span></p>
+    
+    <script>
+        var date= new Date();
+        document.getElementById('date-time').innerHTML=date;
+    </script>
+    </body>">
+        
+    </body>
+</html>
