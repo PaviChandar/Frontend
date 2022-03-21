@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<h1>Touch Event</h1>
+
+<p touchstart="sample()">Touching this content will trigger the event. </p>
+
+<p touchend="sample1()">Touching this content and then releasing the touch, will trigger the function. </p>
+
+<p><strong>Note:</strong> This example is for touch devices only.</p>
+
+<p id="demo"></p>
+
+<script>
+function sample() {
+  document.getElementById("demo").innerHTML = "Any help needed?";
+}
+
+function sample1() {
+  document.getElementById("demo").innerHTML = "Hi friends";
+}
+</script>
+
+</body>
+</html>
