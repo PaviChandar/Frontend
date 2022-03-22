@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Drag&Drop Events</title>
+<style>
+#div1 {
+  width: 400px;
+  height: 150px;
+  padding: 10px;
+  padding-top: 50px;
+  text-align:  center;
+  background-color: lightblue;
+  border: 5px solid black;
+}
+body{
+  background-color: #fff0e9;
+}
+h1{
+  text-align: center;
+}
+h3{
+  color: hotpink;
+}
+</style>
+<script>
+function allowDrop(ev) {
+  ev.preventDefault();
+}
+
+function drag(ev) {
+  ev.dataTransfer.setData("image", ev.target.id)/*ev.target.id -> drag1*/;
+}
+
+function drop(ev) {
+  ev.preventDefault();
+  var data = ev.dataTransfer.getData("image");
+  ev.target.appendChild(document.getElementById(data));/*Appending the dragged element into the drop element*/
+}
+</script>
+</head>
+<body>
+  <h1>HTML Drag&Drop</h1>
+  <h3>Create an user interface to drag the html5 image into the rectangle box by using drag and drop events.</h3>
+	<div id="div1" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+<br>
+<img id="drag1" src="drag.png" draggable="true" ondragstart="drag(event)" width="150" height="100">
+</body>
+</html>
