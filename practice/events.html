@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+<body>
+<style>
+#demo {
+  border: 1px solid black;
+  padding: 0px; 
+  width: 400px;
+  height: 20px; 
+}
+.tooltip {
+  position: relative;
+  display: inline-block;
+  border-bottom: 1px dotted black;
+}
+body{
+	background-color: #fff0e9;
+}
+ol{
+	color: hotpink;
+}
+h2{
+	text-align: center;
+}
+.tooltip .tooltiptext {
+  visibility: hidden;
+  width: 120px;
+  background-color: black;
+  color: #fff;
+  text-align: center;
+  border-radius: 6px;
+  padding: 5px 0;
+  
+  /* Position the tooltip */
+  position: absolute;
+  z-index: 1;
+  top: -5px;
+  left: 105%;
+}
+textarea:focus{
+background:#f9d2f9;
+}
+.tooltip{
+border: 1px solid black;
+background: #d9d9d9;
+}
+.tooltip:hover{
+cursor:pointer;
+}
+.tooltip:hover .tooltiptext {
+  visibility: visible;
+}
+</style>
+<script>
+function displayDate() {
+const d = new Date();
+  var ans = document.getElementById("demo");
+  ans.value="Date - "+ d.getDate()+"/"+d.getMonth()+"/"+d.getFullYear()+"  Time - "+d.getHours()+":"+d.getMinutes()+":"+d.getSeconds();
+}
+</script>
+<h2>JavaScript HTML Events</h2>
+<ol>Requirements:
+
+<li>When the mouse hover on the button, show tool tip which contains the text "click here to see date and time".</li>
+
+<li>If clicked the button, it should display the current date and time in the text box.</li>
+
+<li>When focused, the background of the text box should change into light violet.</li>
+
+<li>When the focus is away from the text box, the background color should change into white.</li>
+
+   Handle the above mentioned requirements by using events in java script.</ol><br><hr>
+<p>Click the button to display the date.</p>
+<div button onclick="displayDate()" class="tooltip">Button</button>
+<span class="tooltiptext">Click here to see date & time</span>
+</div>
+<br><br>
+<textarea type="text" id="demo"></textarea>
+</body>
+</html> 
