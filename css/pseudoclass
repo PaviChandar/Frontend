@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <h1 style="text-align: center;"><bold>Pseudo class</bold></h1>
+<style>
+div {
+  background-color: black;
+  color: white;
+  padding: 25px;
+  text-align: center;
+}
+
+div:hover {
+  background-color:peru;
+}
+</style>
+</head>
+<body>
+
+<p>Pseudo class mouse event</p>
+
+<div>Mouse Over Me</div>
+
+</body>
+</html>
+
+
