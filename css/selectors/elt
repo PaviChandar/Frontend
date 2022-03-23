@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Selector-Element</title>
+        <h2 style="text-align: center;"><strong>Element Selector</strong></h2>
+        <style>
+            p{
+               color: purple;
+               background-color: black;
+               font-family: Arial, Helvetica, sans-serif;
+            }
+        </style>
+    </head>
+    <body>
+        <p>Cascading Style Sheets is a style sheet language used for describing the presentation of a document written in a markup language such as HTML.
+             <br>CSS is a cornerstone technology of the World Wide Web, alongside HTML and JavaScript</p>
+    </body>
+</html>
