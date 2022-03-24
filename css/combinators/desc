@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>
+            Combinator-Descendant
+        </title>
+        <h1>Descendant Combinator</h1>
+        <style>
+            div p{
+                text-align: center;
+                color: red;
+            }
+        </style>
+    </head>
+    <body>
+        <p>Hi. Good Morning</p>
+        <div>
+            <p>Performing descendant combinator</p>
+            <span><p>This is Pavi</p></span>
+        </div>
+        <p>Welcome</p>
+        <p>Thank you</p>
+    </body>
+</html>
