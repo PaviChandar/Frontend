@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>
+            Combinator-Adjacent sibling
+        </title>
+        <h1>Adjacent sibling Combinator</h1>
+        <style>
+            div+p{
+                text-align: center;
+                background-color: red;
+            }
+        </style>
+    </head>
+    <body>
+        <p>Hi. Good Morning</p>
+        <div>
+            <p>Performing adjacent sibling combinator</p>
+            <span><p>This is Pavi</p></span>
+        </div>
+        <p>Welcome</p>
+        <p>Thank you</p>
+    </body>
+</html>
