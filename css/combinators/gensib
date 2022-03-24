@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>
+            Combinator-General sibling
+        </title>
+        <h1>General sibling Combinator</h1>
+        <style>
+            div~p{
+                text-align: center;
+                color: red;
+                font-size: large;
+            }
+        </style>
+    </head>
+    <body>
+        <p>Hi. Good Morning</p>
+        <div>
+            <p>Performing general sibling combinator</p>
+        </div>
+        <span><p>This is Pavi</p></span>
+        <p>Welcome</p>
+        <p>Thank you</p>
+    </body>
+</html>
