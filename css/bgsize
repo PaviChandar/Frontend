@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+#example1 {
+  border: 2px solid black;
+  padding: 75px;
+  background: lightblue url(college.jpg);
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+}
+
+#example2 {
+  border: 2px solid black;
+  padding: 25px;
+  background: url(college.jpg);
+  background-repeat: no-repeat;
+  background-size: 75% 50%;
+  text-shadow:black 0px 0px 2px ;
+}
+</style>
+</head>
+<body>
+
+<h2>background-size: 100% 100%:</h2>
+<div id="sample1">
+  <h2>Hello World</h2>
+  <p>The size of the background image is set in percent of the parent element; 100% width and 100% height.</p>
+</div>
+
+<h2>background-size: 75% 50%:</h2>
+<div id="sample2">
+  <h2>Hello World</h2>
+  <p>The size of the background image is set in percent of the parent element; 75% width and 50% height.</p>
+</div>
+
+</body>
+</html>
