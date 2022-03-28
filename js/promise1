@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+    <body>
+        <h2>Javascript Promises</h2>
+        <p id="demo"></p>
+        <script>
+            function sample(some){
+                document.getElementById("demo").innerHTML=some;
+            }
+            let p=new Promise(function(myResolve,myReject){
+    let a=1+1;
+    if(a==2){
+        myResolve("Success");
+    }else{
+        myReject("Failed");
+    }
+});
+p.then(
+    function(success){sample(success);},
+    function(failure){sample(failure);}
+);
+
+        </script>
+    </body>
+    </html>
