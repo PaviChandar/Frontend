@@ -140,6 +140,7 @@ var address = document.forms["myform"]["address"].value;
 var state= document.forms["myform"]["state"].value;
 var degree= document.forms["myform"]["degree"].value;
 var field= document.forms["myform"]["field"].value;
+var nameregex=/^[a-zA-Z]{3,15}$/;
 
 /*var hobby= document.getElementById(“hobby”);*/
 
@@ -151,7 +152,7 @@ alert("enter the name");
 return false;
 }
 
-if(!isNaN(first))
+if(!nameregex.test(first))
 {
 alert("name should be in character");
 return false;
@@ -164,7 +165,7 @@ alert("enter the last name");
 return false;  
 }
 
-if(!isNaN(last))
+if(!nameregex.test(last))
 {
 alert("name should be in character");
 return false;
