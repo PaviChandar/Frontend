@@ -1,0 +1,107 @@
+h1{
+    color: palegreen;
+}
+body{
+    background-image:linear-gradient(rgba(0,0,0,0.8),rgba(0,0,0,0.8)),url(college.jpg);
+    background-position: center;
+    background-size: cover;
+}
+.container{
+    width: 360px;
+    height: 550px;
+    margin: 8% auto;
+    background-color: white;
+    border-radius: 5px;
+     position: relative; 
+     overflow: hidden;
+}
+h3{
+    text-align: center;
+    margin-bottom: 40px;
+}
+.container form{
+    width: 280px;
+    position: absolute; 
+    top:100px;
+    left: 40px;
+    transition: 0.5s;
+}
+
+form input{
+    width: 100%;
+    padding: 10px 5px;
+    margin: 5px 0;
+    border: 0;
+    border-bottom: 1px solid #999;
+    outline: none;
+    background: transparent;
+}
+.btn-box{
+    margin: 30px;
+    text-align: center;
+}
+form button{
+    width: 100px;
+    height: 35px;
+    margin: 0 10px;
+    background: linear-gradient(to right,pink,orange);
+    border-radius: 30px;
+    border: 0;
+    /* outline: none; */
+    cursor: pointer;
+}
+#Form2{ 
+    left:450px;
+}
+#Form3{ 
+    left:450px;
+}
+#Form4{ 
+    left:450px;
+}
+#Form5{ 
+    left:450px;
+}
+.step-row{
+    width: 360px;
+    height: 40px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    box-shadow: 0 -1px 5px -1px black;
+    position: relative;
+}
+.step-col{
+    width: 120px;
+    text-align: center;
+    columns: grey;
+    position: relative;
+}
+#progress{
+    position: absolute;
+    height: 100%;
+    width: 60px;
+    background:linear-gradient(to right,pink,orange) ;
+    transition: 1s;
+}
+#progress::after{
+    content: '';
+    border-top: 20px solid transparent;
+    border-bottom: 20px solid transparent;
+    position: absolute;
+    right: -20px;
+    border-left: 20px solid orange;
+}
+.btn-box{
+    padding: 10px;
+    position: relative;
+}
+.btn{
+    display: inline-block;
+    width: 70px;
+    height: 30px;
+    text-align: center;
+    border: gray;
+    cursor: pointer;
+    font-weight: bold;
+}
