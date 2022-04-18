@@ -1,5 +1,6 @@
 h1{
     color: palegreen;
+    text-align: center;
 }
 body{
     background-image:linear-gradient(rgba(0,0,0,0.8),rgba(0,0,0,0.8)),url(college.jpg);
@@ -26,7 +27,13 @@ h3{
     left: 40px;
     transition: 0.5s;
 }
-
+select{
+    width:290px;
+}
+input[type="checkbox"]
+{
+    width: 20px;
+}
 form input{
     width: 100%;
     padding: 10px 5px;
@@ -47,21 +54,12 @@ form button{
     background: linear-gradient(to right,pink,orange);
     border-radius: 30px;
     border: 0;
-    /* outline: none; */
     cursor: pointer;
 }
-#Form2{ 
+#Form2,#Form3,#Form4,#Form5,#Form6{ 
     left:450px;
 }
-#Form3{ 
-    left:450px;
-}
-#Form4{ 
-    left:450px;
-}
-#Form5{ 
-    left:450px;
-}
+
 .step-row{
     width: 360px;
     height: 40px;
@@ -80,7 +78,7 @@ form button{
 #progress{
     position: absolute;
     height: 100%;
-    width: 60px;
+    width: 40px;
     background:linear-gradient(to right,pink,orange) ;
     transition: 1s;
 }
@@ -95,6 +93,10 @@ form button{
 .btn-box{
     padding: 10px;
     position: relative;
+}
+input[type="radio"]
+{
+    width: 20%;
 }
 .btn{
     display: inline-block;
