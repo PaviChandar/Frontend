@@ -15,236 +15,256 @@ var Next3 = document.getElementById("Next3");
 var Next4 = document.getElementById("Next4");
 var Submit1 = document.getElementById("Submit1");
 
-Back1.onclick = function(){
+Back1.onclick = function() {
     Form1.style.left = "40px";
     Form2.style.left = "450px";
     progress.style.width = "80px";
 }
 
-Back2.onclick = function(){
+Back2.onclick = function() {
     Form2.style.left = "40px";
     Form3.style.left = "450px";
     progress.style.width = "160px";
 }
 
-Next3.onclick = function(){
+Next3.onclick = function() {
     Form3.style.left = "-450px";
     Form4.style.left = "40px";
     progress.style.width = "200px";
 }
 
-Back3.onclick = function(){
+Back3.onclick = function() {
     Form3.style.left = "40px";
     Form4.style.left = "450px";
     progress.style.width = "240px";
 }
 
-Back4.onclick = function(){
+Back4.onclick = function() {
     Form4.style.left = "40px";
     Form5.style.left = "450px";
     progress.style.width = "320px";
 }
 
-var mailfield = 0;
-var passwordfield = 0;
-var confirmpasswordfield = 0;
-var firstnamefield = 0;
-var lastnamefield = 0;
+function validateBasic() {
+    validateName();
+    validateLastname();
+    validateMail();
+    validatePassword();
+    validateConfirmPassword() ;
+    pageChange1();
 
-function validateMail(){
-    var emailregex = /^[a-zA-Z0-9+_.-]+@[a-zA-Z.-]+.[a-z]{2,3}$/;
-    var email = document.getElementById("mail").value;
-    if (email === "")
-        {
-        alert("Enter email");
-        mailfield = 0;
-        return false;
-        }
-    else if(!emailregex.test(email))
-        {
-            alert("Enter a valid email");
-        mailfield = 0;
-        return false;
-        }
-    else{
-        mailfield = 1;
-    }
 }
 
-function validatePassword(){ 
+var mailField = 0;
+var passwordField = 0;
+var confirmPasswordField = 0;
+var firstNameField = 0;
+var lastNameField = 0;
 
-    var passwordRegex = /^(?=.*[0-9])(?=.*[!@#$%^&*])(?=.*[a-z])(?=.*[A-Z])[a-zA-z0-9!@#$%^&*]{6,15}$/;
-    var passWord = document.getElementById("password").value;
-    if (passWord === "")
-        {
-        alert("Enter password");
-        passwordfield = 0;
-        return false;
-    
-        }
-    else if (!passwordRegex.test(passWord))
-        {
-            alert("Enter a valid password");
-        }
-    else{
-        passwordfield = 1;
-    }
-}
+var errorFirst = document.getElementById('p1');
+function validateName() {
 
-function validateConfirmPassword(){
-
-    var confirmPassword = document.getElementById("confirmpass").value;
-    var passWord = document.getElementById("password").value;
-    
-    if (passWord !== confirmPassword)
-        {
-            alert("Passwords didn't match");
-        confirmpasswordfield = 0;
-            return false;
-            
-        }
-    else{
-        confirmpasswordfield = 1;
-    }
-}
-
-function validateName()
-{
-    var firstname = document.getElementById("firstname").value;
+    var firstName = document.getElementById("firstname").value;
     var nameregex = /^[a-zA-Z]{3,15}$/;
 
-    if (!nameregex.test(firstname))
-        {
-        alert("Name should be in character");
-        firstnamefield = 0;
+    if (!nameregex.test(firstName)) {
+        errorFirst.innerHTML = "Name should be in character";
+        firstNameField = 0;
         return false;
-        } 
-    else{
-        firstnamefield = 1;
+        } else {
+            errorFirst.innerHTML = "";
+            firstNameField = 1;
     }
 }
 
-function validateLastname(){
+var errorLast = document.getElementById('p2');
+function validateLastname() {
 
-    var lastname = document.getElementById("lastname").value;
+    var lastName = document.getElementById("lastname").value;
     var nameregex = /^[a-zA-Z]{0,15}$/
 
-    if (!nameregex.test(lastname))
-        {
-        alert("name should be in character");
-        lastnamefield = 0;
+    if (!nameregex.test(lastName)) {
+        errorLast.innerHTML = "Name should be in character";
+        lastNameField = 0;
         return false;
-       
-        }
-        else{
-            lastnamefield = 1;
+       } else {
+            errorLast.innerHTML = "";
+            lastNameField = 1;
         }
 }
+
+var errorMail = document.getElementById('p3');
+function validateMail() {
+
+    var emailregex = /^[a-zA-Z0-9+_.-]+@[a-zA-Z.-]+.[a-z]{2,3}$/;
+    var email = document.getElementById("mail").value;
+    if (email === "") {
+        errorMail.innerHTML = "Enter Mail ID";
+        mailField = 0;
+        return false;
+        } else if (!emailregex.test(email)) {
+            errorMail.innerHTML = "Enter a valid email";
+        mailField = 0;
+        return false;
+        } else {
+            errorMail.innerHTML = "";
+        mailField = 1;
+    }
+}
+
+var errorPassword = document.getElementById('p4');
+function validatePassword() { 
+
+    var passwordRegex = /^(?=.*[0-9])(?=.*[!@#$%^&*])(?=.*[a-z])(?=.*[A-Z])[a-zA-z0-9!@#$%^&*]{6,15}$/;
+    var password = document.getElementById("password").value;
+    if (password === "") {
+       errorPassword.innerHTML = "Enter password";
+        passwordField  = 0;
+        return false;
+    
+        } else if (!passwordRegex.test(password)) {
+            errorPassword.innerHTML = "Enter a valid password";
+        } else {
+            errorPassword.innerHTML = "";
+        passwordField  = 1;
+    }
+}
+
+var errorConfirmPassword = document.getElementById('p5');
+function validateConfirmPassword() {
+
+    var confirmPassword = document.getElementById("confirmpass").value;
+    var password = document.getElementById("password").value;
+    
+    if (password !== confirmPassword) {
+        errorConfirmPassword.innerHTML = "Passwords didn't match";
+            confirmPasswordField = 0;
+            return false;
+        } else {
+            errorConfirmPassword.innerHTML = "";
+        confirmPasswordField = 1;
+    }
+}
+
 
 
 function pageChange1()
 {
-    if (mailfield == 1 && passwordfield == 1 && confirmpasswordfield == 1 && firstnamefield == 1 )
-    {
+    if (mailField === 1 && passwordField === 1 && confirmPasswordField === 1 && firstNameField === 1 ){
         var Next1 = document.getElementById("Next1");
-        Next1.onclick = function(){
+        Next1.onclick = function() {
                 Form1.style.left = "-450px";
                 Form2.style.left = "40px";
                 progress.style.width = "40px";
             }
-    }
-    else{
+    } else {
         alert("Please match the required details!");
     }
 }
 
+function validateOthers() {
+    validateDob();
+    validateState() ;
+    validateGender() ;
+    validatePhone() ;
+    pageChange2();
 
-var dobfield = 0;
-var phonefield = 0;
-var statefield = 0;
+}
 
+var dobField = 0;
+var phoneField = 0;
+var stateField = 0;
+
+var errorDob = document.getElementById('paraDob');
 function validateDob()
 {
-
-    if (validateAge()<18)
-    {
-        alert("Age should be greater than 18");
-        dobfield = 0;
+if (validateAge()<18) {
+        errorDob.innerHTML = "Age should be greater than 18";
+        dobField = 0;
         return false;
        
-    }
-    else{
-        dobfield=1;
+    } else {
+        errorDob.innerHTML = "";
+        dobField=1;
     }
 }
 
-function validateAge()
-{
-var dateofbirth = document.getElementById("dob").value;
-var dob = new Date(dateofbirth);  
-var monthdiff = Date.now() - dob.getTime();   
-var agedt = new Date(monthdiff);       
-var year = agedt.getUTCFullYear(); 
-var age = Math.abs(year - 1970);
-return age;
+function validateAge() {
+var dateOfBirth = document.getElementById("dob").value;
+var dob = new Date(dateOfBirth);  
+var monthDifference = Date.now() - dob.getTime();   
+var age = new Date(monthDifference);       
+var year = age.getUTCFullYear(); 
+var newAge = Math.abs(year - 1970);
+return newAge;
 }
 
-function validateState()
-{
+var errorState = document.getElementById('paraState');
+function validateState() {
+
     var stateVal = document.getElementById("state").value;
-    if(stateVal === "Select a state")
-        {
-        alert("select a state");
-        statefield = 0;
+
+    if(stateVal === "Select a state") {
+        errorState.innerHTML = "select a state";
+        stateField = 0;
         return false;
         
-        }
-        else{
-            statefield = 1;
+        } else {
+            errorState.innerHTML = "";
+            stateField = 1;
         }
 }
-
-function validatePhone()
-{
-    var phoneNo = document.getElementById("phonenum").value;
-    var phoneregex = /^[6-9]{1}[0-9]{9}$/
-        if (phoneNo === "")
-        {
-        alert("enter phone no.");
-        phonefield = 0;
+let genderMale = document.getElementById("male");
+let genderFemale = document.getElementById("female");
+var genderField=0;
+function validateGender() {
+    var errorGender = document.getElementById("paraGender");
+    if (genderMale.checked === false && genderFemale.checked === false) {
+        errorGender.innerHTML = "Enter gender.";
+        genderField=0;
         return false;
-       
-        }
-      
-        else if(!phoneregex.test(phoneNo))
-        {
-            alert("Number should contain 10 digits");
-            phonefield = 0;
+    }
+    else {
+        errorGender.innerHTML = "";
+        genderField=1;
+    }
+}
+
+var errorPhone = document.getElementById('paraPhone');
+function validatePhone() {
+    var phoneNo = document.getElementById("phonenum").value;
+    var phoneRegex = /^[6-9]{1}[0-9]{9}$/
+
+        if (phoneNo === "") {
+        errorPhone.innerHTML = "Enter phone no.";
+        phoneField = 0;
+        return false;
+       } else if (!phoneRegex.test(phoneNo)) {
+           errorPhone.innerHTML = "Number should contain 10 digits";
+            phoneField = 0;
             return false;
-        }
-        else{
-            phonefield = 1;
+        } else {
+            errorPhone.innerHTML = "";
+            phoneField = 1;
         }
 }
 
-function pageChange2(){
+function pageChange2() { 
 
-    if (dobfield == 1 && phonefield == 1 && statefield == 1)
-    {
+    if (dobField === 1 && phoneField === 1 && stateField === 1 && genderField ===1) {
         var Next2 = document.getElementById("Next2");
-        Next2.onclick = function(){
+        Next2.onclick = function() {
                 Form2.style.left = "-450px";
                 Form3.style.left = "40px";
                 progress.style.width = "120px";
             }
-    }
-else{
+    } else {
     alert("Please match the required details!");
     }
 }
 
-var gradefield = 0;
-var yearofpassingfield = 0;
+var gradeField = 0;
+var yearOfPassingField = 0;
 
 function validateEducation() {
     validateGrade();
@@ -252,117 +272,94 @@ function validateEducation() {
     pageChange4()
 }
 
-function validateGrade()
-{
-    var grade;
-    let checkBox = document.querySelectorAll('.check-box');
-    console.log(checkBox)
-    checkBox.forEach(c => {
-        if(c.checked === true) {
-            grade = true
-        }
-    })
-    if (grade === false)
-        {
-        alert("select a grade");
-        gradefield = 0;
+var errorGrade = document.getElementById('paraGrade');
+function validateGrade() {
+    var grade = document.getElementById('grades');
+    if (grade === "" ) {
+       errorGrade.innerHTML = "Select a Graduation";
+        gradeField = 0;
         return false;
        
-        }
-        else{
-            gradefield = 1; 
+        } else {
+            errorGrade.innerHTML = "";
+            gradeField = 1; 
         }
 }
 
-function validateTermsAndConditions()
-{
-    var check = document.getElementById("tnc").checked;
-    if (check === false)
-    {
-        alert("Please accept terms and conditions");
-        conditionfield=0;
-        return false;
-    }
-    else{
-        conditionfield=1;
-    }
-
-}
-
+var errorYearOfPaasing = document.getElementById('paraYearOfPassing');
 function validateYearOfPassing() {
+
     var yopFormat = /^(0[1-9]|1[012])[\/\-](19[5-9]\d|20[0-2]\d)$/;
     var yop = document.getElementById("pass").value;
-    if (yop === ""){
-        alert("This field is required");
-        yearofpassingfield=0;
+
+    if (yop === "") {
+        errorYearOfPaasing.innerHTML = "This field is required";
+        yearOfPassingField=0;
         return false;
         
-    }
-    else if(!yopFormat.test(yop))
-    {
-        alert("Enter a valid pattern");
-        yearofpassingfield = 0;
+    } else if (!yopFormat.test(yop)) {
+        errorYearOfPaasing.innerHTML = "Enter a valid pattern";
+        yearOfPassingField = 0;
         return false;
         
-    }
-    else{
-        yearofpassingfield = 1;
+    } else {
+        errorYearOfPaasing.innerHTML = "";
+        yearOfPassingField = 1;
     }
 }
 
 function pageChange4() {
-    if (gradefield === 1 && yearofpassingfield === 1){
+    if (gradeField === 1 && yearOfPassingField === 1) {
         var Next4 = document.getElementById("Next4");
-        Next4.onclick = function(){
+        Next4.onclick = function() {
                 Form4.style.left = "-450px";
                 Form5.style.left = "40px";
                 progress.style.width = "280px";
             }
-    } 
-    else{
+    } else {
         alert("Please fill all the required details!");
     }
 }
 
+function validateTeam() {
+    validateDepartment() ;
+    validateTermsAndConditions();
+    pageChange5();
+}
 var checkBox = document.getElementById('check');
-var departmentfield = 0;
-var conditionfield = 0;
+var departmentField = 0;
+var conditionField = 0;
 
-function validateDepartment()
-{
+var errorDepartment = document.getElementById('paraDepartment');
+function validateDepartment() {
     var department = document.getElementById('dept').value;
     
-    if (department === "Select a Department")
-    {
-    alert("select a Department");
-    departmentfield = 0;
+    if (department === "Select a Department") {
+    errorDepartment.innerHTML = "Select a Department";
+    departmentField = 0;
     return false;
-   
-    }
-    else{
-        departmentfield = 1;
+   } else {
+        errorDepartment.innerHTML = "";
+        departmentField = 1;
     } 
 }
 
-function validateTermsAndConditions()
-{
+function validateTermsAndConditions() {
     var check = document.getElementById("tnc").checked;
-    if (check === false)
-    {
+    if (check === false) {
         alert("Please accept terms and conditions");
-        conditionfield = 0;
+        conditionField = 0;
         return false;
-    }
-    else{
-        conditionfield = 1;
+    } else {
+        conditionField = 1;
     }
 
 }
 
-function pageChange5(){
+function pageChange5() {
    
-    if (departmentfield === 1 && departmentfield === 1){
-        Submit1.onclick = function(){
+    if (departmentField === 1 && conditionField === 1) {
+        Submit1.onclick = function() {
     Form5.style.left = "-450px";
     Form6.style.left = "40px";
     progress.style.width = "360px";
