@@ -2,11 +2,16 @@ h1{
     color: palegreen;
     text-align: center;
 }
+
 body{
     background-image:linear-gradient(rgba(0,0,0,0.8),rgba(0,0,0,0.8));
     background-position: center;
     background-size: cover;
 }
+#p{
+    font-weight: bold;
+}
+
 .container{
     width: 450px;
     height: 750px;
@@ -16,10 +21,12 @@ body{
      position: relative; 
      overflow: hidden;
 }
+
 h3{
     text-align: center;
     margin-bottom: 40px;
 }
+
 .container form{
     width: 280px;
     position: absolute; 
@@ -27,6 +34,7 @@ h3{
     left: 40px;
     transition: 0.5s;
 }
+
 select{
     width:290px;
 }
@@ -35,10 +43,12 @@ select{
     overflow-y: auto;
     overflow-x: hidden;
 }
+
 input[type="checkbox"]
 {
     width: 20px;
 }
+
 form input{
     width: 100%;
     padding: 10px 5px;
@@ -48,10 +58,12 @@ form input{
     outline: none;
     background: transparent;
 }
+
 .btn-box{
     margin: 40px;
     text-align: center;
 }
+
 form button{
     width: 120px;
     height: 35px;
@@ -61,6 +73,7 @@ form button{
     border: 0;
     cursor: pointer;
 }
+
 #Form2,#Form3,#Form4,#Form5,#Form6{ 
     left:450px;
 }
@@ -74,12 +87,14 @@ form button{
     box-shadow: 0 -1px 5px -1px black;
     position: relative;
 }
+
 .step-col{
     width: 120px;
     text-align: center;
     columns: grey;
     position: relative;
 }
+
 #progress{
     position: absolute;
     height: 100%;
@@ -87,6 +102,7 @@ form button{
     background:linear-gradient(to right,pink,orange) ;
     transition: 1s;
 }
+
 #progress::after{
     content: '';
     border-top: 20px solid transparent;
@@ -95,14 +111,17 @@ form button{
     right: -20px;
     border-left: 20px solid orange;
 }
+
 .btn-box{
     padding: 10px;
     position: relative;
 }
+
 input[type="radio"]
 {
     width: 20%;
 }
+
 .btn{
     display: inline-block;
     width: 70px;
