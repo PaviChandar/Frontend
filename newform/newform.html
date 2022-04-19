@@ -12,32 +12,40 @@
                     <form id="Form1">
                         <h3>BASIC</h3>
                         <label>First name</label>
-                        <input type="text"  name="firstname" id="firstname" placeholder="Enter your first name" maxlength="30" onchange="validateName()" required>
+                        <input type="text"  name="firstname" id="firstname" placeholder="Enter your first name" maxlength="30"  required>
+                        <p id="p1"></p>
                         <label>Last name</label>
-                        <input type="text"  name="lastname" id="lastname" placeholder="Enter your last name" maxlength="30" onchange="validateLastname()">
+                        <input type="text"  name="lastname" id="lastname" placeholder="Enter your last name" maxlength="30" >
+                        <p id="p2"></p>
                         <label>Email ID</label>
-                        <input type="text" id="mail" placeholder="Enter Email ID" onchange="validateMail()" required>
+                        <input type="text" id="mail" placeholder="Enter Email ID"  required>
+                        <p id="p3"></p>
                         <label>Password</label>
-                        <input type="password" id="password" placeholder="Password" onchange="validatePassword()" required>
+                        <input type="password" id="password" placeholder="Password"  required>
+                        <p id="p4"></p>
                         <label>Confirm password</label>
-                        <input type="password" id="confirmpass" placeholder="Confirm Password" onchange="validateConfirmPassword()" required>
+                        <input type="password" id="confirmpass" placeholder="Confirm Password" required>
+                        <p id="p5"></p>
                         
                         <div class="btn-box">
-                             <button class="btn" type="button" onclick="pageChange1()" id="Next1">Next</button>
+                             <button class="btn" type="button" onclick="validateBasic()" id="Next1">Next</button>
                         </div>  
                     </form>
 
                     <form id="Form2">
                         <h3>OTHERS</h3>
                         <label>Date of Birth</label>
-                        <input type="date" id="dob" name="dob" placeholder="Enter DOB" onchange="validateDob()" required>
+                        <input type="date" id="dob" name="dob" placeholder="Enter DOB"  required>
+                        <p id="paraDob"></p>
                         <label>Gender</label>
-                        <input type="radio" name="gender" value="male">Male
-                        <input type="radio" name="gender" value="female">Female 
+                        <input type="radio" id="male" name="gender"  value="male"  >Male
+                        <input type="radio" id="female" name="gender" value="female"  >Female 
+                        <p id="paraGender"></p> 
                         <br>
                         <label>Address</label>
-                        <input type="textarea" name="address" id="address"><br>
-                        <select id="state" name="state" onchange="validateState()" required>
+                        <input type="textarea" name="address" id="address" ><br>
+                        <p id="paraState"></p>
+                        <select id="state" name="state"  required>
                             <option value="Select a state">Select a state</option>
                             <option value="Andhra Pradesh">Andhra Pradesh</option>
                             <option value="Andaman and Nicobar Islands">Andaman and Nicobar Islands</option>
@@ -77,68 +85,71 @@
                             <option value="West Bengal">West Bengal</option>
                         </select><br><br>
                         <label>Phone number</label>
-                        <input type="tel"  name="phoneno" id="phonenum" placeholder="Enter Phone number" max="10" onchange="validatePhone()" required>
+                        <input type="tel"  name="phoneno" id="phonenum" placeholder="Enter Phone number" max="10" required>
+                        <p id="paraPhone"></p>
                         
                         <div class="btn-box">
                             <button class="btn" type="button" id="Back1" style="float: left;">Previous</button>
-                            <button class="btn" type="button" id="Next2" onclick="pageChange2()" style="float: right;">Next</button>
+                            <button class="btn" type="button" id="Next2" onclick="validateOthers()" style="float: right;">Next</button>
                         </div>  
                 </form>
 
                  <form id="Form3">
-                        <h3>WORK</h3>
-                        <label>Occupation:</label>
-                        <input type="radio" name="occupation" value="no">
-                        <label for="no">No</label>
-                        <input type="radio" name="occupation" value="yes">
-                        <label for="yes">Yes</label>
-                        <br><br>
-                        <label>Years of experience</label>
+                    <h3>WORK</h3>
+                    <label>Occupation:</label>
+                    <input type="radio" name="occupation" value="no">
+                    <label for="no">No</label>
+                    <input type="radio" name="occupation" value="yes">
+                    <label for="yes">Yes</label>
+                    <br><br>
+                    <label>Years of experience</label>
                         <input type="number"  name="experience" id="exp" placeholder="Years of experience" min="0">
 
                         <div class="btn-box">
-                        <button class="btn" type="button" id="Back2" style="float: left;">Previous</button>
-                        <button class="btn" type="button" id="Next3"  onclick="pageChange3()" style="float: right;">Next</button>
+                            <button class="btn" type="button" id="Back2" style="float: left;">Previous</button>
+                            <button class="btn" type="button" id="Next3"  onclick="pageChange3()" style="float: right;">Next</button>
                         </div>  
                 </form>
                 
 
                 <form id="Form4">
-                        <h3>EDUCATION</h3>
-                        <input type="multiselect" name="graduation" onchange="validateGrade()" required><br>
-                        <label for = "grades" >Select a graduation</label>
-                        <select id = "grades" multiple >
-                            <option value="SSLC">SSLC</option>
-                            <option value="SSLC">HSC</option>
-                            <option value="SSLC">DIPLOMA</option>
-                            <option value="SSLC">UG</option>
-                            <option value="SSLC">PG</option>
-                        </select>     
+                    <h3>EDUCATION</h3>
+                    <label for = "grades" >Select a graduation</label><br>
+                    <select id = "grades" multiple  required>
+                       <option value="SSLC">SSLC</option>
+                        <option value="SSLC">HSC</option>
+                        <option value="SSLC">DIPLOMA</option>
+                        <option value="SSLC">UG</option>
+                        <option value="SSLC">PG</option>
+                    </select>  
+                    <p id="paraGrade"></p>   <br>
                                 
-                        <label>Year of passing</label>
-                        <input type="text"  name="yop" id="pass"  placeholder="mm/yyyy" onchange="validateYearOfPassing()" required>
+                    <label>Year of passing</label>
+                    <input type="text"  name="yop" id="pass"  placeholder="mm/yyyy"  required>   
+                    <p id="paraYearOfPassing"></p>
                         
-                        <div class="btn-box">
-                            <button class="btn" type="button" id="Back3" style="float: left;" >Previous</button>
-                            <button class="btn" type="button" id="Next4" onclick="validateEducation()" style="float: right;">Next</button>
-                        </div>  
+                    <div class="btn-box">
+                        <button class="btn" type="button" id="Back3" style="float: left;" >Previous</button>
+                        <button class="btn" type="button" id="Next4" onclick="validateEducation()" style="float: right;">Next</button>
+                    </div>  
                 </form>
 
                 <form id="Form5">
-                        <h3>TEAM</h3>
-                        <select id="dept" name="dept" required onchange="validateDepartment()">
-                            <option value="Select a Dept">Select a Department</option>
-                            <option value="LAMP">LAMP</option>
-                            <option value=".NET">.NET</option>
-                            <option value="Oracle">ORACLE</option>
-                        </select><br><br>
-                        <input type="checkbox"  name="condition" id="tnc" value="check" onchange="validateTermsAndConditions()">
-                        <label for="tnc">I agree to the above mentioned terms and conditions</label>
+                    <h3>TEAM</h3>
+                    <select id="dept" name="dept"  required>
+                         <option value="Select a Dept">Select a Department</option>
+                         <option value="LAMP">LAMP</option>
+                         <option value=".NET">.NET</option>
+                          <option value="Oracle">ORACLE</option>
+                    </select>
+                    <p id="paraDepartment"></p><br><br>
+                    <input type="checkbox"  name="condition" id="tnc" value="check" >
+                    <label for="tnc">I agree to the above mentioned terms and conditions</label>
                         
-                        <div class="btn-box">
-                            <button class="btn" type="button" id="Back4" style="float: left;">Previous</button>
-                            <button class="btn" type="button" id="Submit1" onclick="pageChange5()" style="float: right;">Submit</button>
-                        </div>  
+                    <div class="btn-box">
+                        <button class="btn" type="button" id="Back4" style="float: left;">Previous</button>
+                        <button class="btn" type="button" id="Submit1" onclick="validateTeam()" style="float: right;">Submit</button>
+                    </div>  
                 </form>
 
                 <form id="Form6">
