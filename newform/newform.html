@@ -13,19 +13,19 @@
                         <h3>BASIC</h3>
                         <label>First name</label>
                         <input type="text"  name="firstname" id="firstname" placeholder="Enter your first name" maxlength="30"  required>
-                        <p id="p1"></p>
+                        <span id="nameError" style="color:red"></span><br>
                         <label>Last name</label>
                         <input type="text"  name="lastname" id="lastname" placeholder="Enter your last name" maxlength="30" >
-                        <p id="p2"></p>
+                        <span id="lastNameError" style="color:red"></span>
                         <label>Email ID</label>
                         <input type="text" id="mail" placeholder="Enter Email ID"  required>
-                        <p id="p3"></p>
+                        <span id="emailError" style="color:red"></span>
                         <label>Password</label>
                         <input type="password" id="password" placeholder="Password"  required>
-                        <p id="p4"></p>
+                        <span id="passwordError" style="color:red"></span>
                         <label>Confirm password</label>
                         <input type="password" id="confirmpass" placeholder="Confirm Password" required>
-                        <p id="p5"></p>
+                        <span id="confirmPasswordError" style="color:red"></span>
                         
                         <div class="btn-box">
                              <button class="btn" type="button" onclick="validateBasic()" id="Next1">Next</button>
@@ -115,6 +115,7 @@
                 <form id="Form4">
                     <h3>EDUCATION</h3>
                     <label for = "grades" >Select a graduation</label><br>
+                    <p id="paraGrade"></p> 
                     <select id = "grades" multiple  required>
                        <option value="SSLC">SSLC</option>
                         <option value="SSLC">HSC</option>
@@ -122,7 +123,8 @@
                         <option value="SSLC">UG</option>
                         <option value="SSLC">PG</option>
                     </select>  
-                    <p id="paraGrade"></p>   <br>
+                   
+                      <br><br>
                                 
                     <label>Year of passing</label>
                     <input type="text"  name="yop" id="pass"  placeholder="mm/yyyy"  required>   
@@ -136,13 +138,14 @@
 
                 <form id="Form5">
                     <h3>TEAM</h3>
+                    <p id="paraDepartment"></p>
                     <select id="dept" name="dept"  required>
                          <option value="Select a Dept">Select a Department</option>
                          <option value="LAMP">LAMP</option>
                          <option value=".NET">.NET</option>
                           <option value="Oracle">ORACLE</option>
                     </select>
-                    <p id="paraDepartment"></p><br><br>
+                    <br><br>
                     <input type="checkbox"  name="condition" id="tnc" value="check" >
                     <label for="tnc">I agree to the above mentioned terms and conditions</label>
                         
