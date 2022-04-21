@@ -61,76 +61,80 @@ var confirmPasswordField = 0;
 var firstNameField = 0;
 var lastNameField = 0;
 
-var errorFirst = document.getElementById('p1');
-function validateName() {
+var errorFirst = document.getElementById('nameError');
+var firstName = document.getElementById("firstname").value;
+var nameregex = /^[a-zA-Z]{3,15}$/;
 
-    var firstName = document.getElementById("firstname").value;
-    var nameregex = /^[a-zA-Z]{3,15}$/;
+function validateName() {
 
     if (!nameregex.test(firstName)) {
         errorFirst.innerHTML = "Name should be in character";
         firstNameField = 0;
         return false;
-        } else {
+    } else {
             errorFirst.innerHTML = "";
             firstNameField = 1;
     }
 }
 
-var errorLast = document.getElementById('p2');
-function validateLastname() {
+var errorLast = document.getElementById('lastNameError');
+var lastName = document.getElementById("lastname").value;
+var nameregex = /^[a-zA-Z]{0,15}$/
 
-    var lastName = document.getElementById("lastname").value;
-    var nameregex = /^[a-zA-Z]{0,15}$/
+function validateLastname() {
 
     if (!nameregex.test(lastName)) {
         errorLast.innerHTML = "Name should be in character";
         lastNameField = 0;
         return false;
-       } else {
+    } else {
             errorLast.innerHTML = "";
             lastNameField = 1;
-        }
+    }
 }
 
-var errorMail = document.getElementById('p3');
+var errorMail = document.getElementById('emailError');
+var emailregex = /^[a-zA-Z0-9+_.-]+@[a-zA-Z.-]+\.[a-z]{2,3}$/;
+var email = document.getElementById("mail").value
+
 function validateMail() {
 
-    var emailregex = /^[a-zA-Z0-9+_.-]+@[a-zA-Z.-]+.[a-z]{2,3}$/;
-    var email = document.getElementById("mail").value;
     if (email === "") {
         errorMail.innerHTML = "Enter Mail ID";
         mailField = 0;
         return false;
-        } else if (!emailregex.test(email)) {
+    } else if (!emailregex.test(email)) {
             errorMail.innerHTML = "Enter a valid email";
         mailField = 0;
         return false;
-        } else {
+    } else {
             errorMail.innerHTML = "";
         mailField = 1;
     }
 }
 
-var errorPassword = document.getElementById('p4');
-function validatePassword() { 
+var errorPassword = document.getElementById('passwordError');
+var passwordRegex = /^(?=.*[0-9])(?=.*[!@#$%^&*])(?=.*[a-z])(?=.*[A-Z])[a-zA-z0-9!@#$%^&*]{6,15}$/;
+var password = document.getElementById("password").value;
 
-    var passwordRegex = /^(?=.*[0-9])(?=.*[!@#$%^&*])(?=.*[a-z])(?=.*[A-Z])[a-zA-z0-9!@#$%^&*]{6,15}$/;
-    var password = document.getElementById("password").value;
+function validatePassword() { 
     if (password === "") {
        errorPassword.innerHTML = "Enter password";
         passwordField  = 0;
         return false;
     
-        } else if (!passwordRegex.test(password)) {
+    } else if (!passwordRegex.test(password)) {
             errorPassword.innerHTML = "Enter a valid password";
-        } else {
+    } else {
             errorPassword.innerHTML = "";
         passwordField  = 1;
     }
 }
 
-var errorConfirmPassword = document.getElementById('p5');
+var errorConfirmPassword = document.getElementById('confirmPasswordError');
+var confirmPassword = document.getElementById("confirmpass").value;
+var password = document.getElementById("password").value;
+
 function validateConfirmPassword() {
 
     var confirmPassword = document.getElementById("confirmpass").value;
@@ -274,8 +278,10 @@ function validateEducation() {
 
 var errorGrade = document.getElementById('paraGrade');
 function validateGrade() {
-    var grade = document.getElementById('grades');
-    if (grade === "" ) {
+
+    var grade = document.getElementById('grades').value;
+
+    if (grade === "Select a Graduation" ) {
        errorGrade.innerHTML = "Select a Graduation";
         gradeField = 0;
         return false;
@@ -285,6 +291,7 @@ function validateGrade() {
             gradeField = 1; 
         }
 }
+
 
 var errorYearOfPaasing = document.getElementById('paraYearOfPassing');
 function validateYearOfPassing() {
@@ -343,6 +350,7 @@ function validateDepartment() {
         departmentField = 1;
     } 
 }
+
 
 function validateTermsAndConditions() {
     var check = document.getElementById("tnc").checked;
